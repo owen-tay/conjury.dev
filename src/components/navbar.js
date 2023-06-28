@@ -86,43 +86,38 @@ function Navbar() {
         isDarkMode ? "dark:bg-slate-800" : "dark:bg-white"
       } mb-3 fixed top-0 left-0 w-full z-50`}
     >
-      <div className="max-w-7xl mx-auto md:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto md:px-6 lg:px-8 text-2xl">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center px-4 md:px-0">
             <Link to="/" onClick={closeMobileMenu}>
-              <img src={NavImage} className="h-8" alt="Logo" />
-            </Link>
-            <Link to="/" onClick={closeMobileMenu}>
-              <h1 className="ml-2 text-xl transition-colors text-black dark:text-white duration-300 hover:text-pink-400 dark:hover:text-pink-400">
-                Title
-              </h1>
+              <img src={NavImage} className="h-10  hover:stroke-pink-conjury rounded-2xl transition-colors duration-300" alt="Logo" />
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
             <Link
-              to="/"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+              to="/Contact"
+              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
               onClick={closeMobileMenu}
             >
-              Blog
+              Contact
             </Link>
             <Link
               to="/map"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
               onClick={closeMobileMenu}
             >
               Maps
             </Link>
             <Link
               to="/listings"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
               onClick={closeMobileMenu}
             >
               Listings
             </Link>
             <Link
               to="/profile"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
               onClick={closeMobileMenu}
             >
               Profile
@@ -213,29 +208,29 @@ function Navbar() {
           >
             <div className="flex flex-col items-end">
               <Link
-                to="/blog"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+                to="/Contact"
+                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
                 onClick={closeMobileMenu}
               >
-                Blog
+                Contact
               </Link>
               <Link
                 to="/map"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
                 onClick={closeMobileMenu}
               >
                 Maps
               </Link>
               <Link
                 to="/listings"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
                 onClick={closeMobileMenu}
               >
                 Listings
               </Link>
               <Link
                 to="/profile"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-400 dark:hover:text-pink-400"
+                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
                 onClick={closeMobileMenu}
               >
                 Profile
