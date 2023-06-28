@@ -1,0 +1,31 @@
+/*imports*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/*google fonts*/
+body {
+  font-family: 'Mukta', sans-serif;
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*dark mode toggle*/
+
+.display-none {
+  @apply hidden;
+}
