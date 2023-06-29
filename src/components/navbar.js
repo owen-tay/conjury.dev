@@ -4,6 +4,7 @@ import SunSvg from "./images/sun.svg";
 import MoonSvg from "./images/moon.svg";
 import SunlightSvg from "./images/sunlight.svg";
 import MoonlightSvg from "./images/moonlight.svg";
+import ConjuryLogo from "./images/ConjuryLogo.svg";
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 
 function Navbar() {
@@ -90,7 +91,7 @@ function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center px-4 md:px-0">
             <Link to="/" onClick={closeMobileMenu}>
-              <img src={NavImage} className="h-10  hover:stroke-pink-conjury rounded-2xl transition-colors duration-300" alt="Logo" />
+              <img src={NavImage} className="h-12  hover:stroke-pink-conjury rounded-2xl transition-colors duration-300" alt="Logo" />
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">

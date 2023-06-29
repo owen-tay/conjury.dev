@@ -12,6 +12,15 @@
 }
 
 
+/*selection colour*/
+
+::selection {
+  background: #F198FF; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #F198FF; /* Gecko Browsers */
+}
+
 /*google fonts*/
 body {
   font-family: 'Mukta', sans-serif;
@@ -29,3 +38,7 @@ body {
 .display-none {
   @apply hidden;
 }
+
+/*header video*/
+
+ba

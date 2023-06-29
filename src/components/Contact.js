@@ -1,10 +1,11 @@
 import React from "react";
 import ContactSvg from "./images/contactpage.svg";
 
+
 const About = () => {
   return (
     <div className="container mx-auto pt-8">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mx-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mx-12">
         <div className="lg:order-1 flex flex-col justify-center text-center lg:text-left">
           <h1 className="text-pink-conjury text-5xl pt-12  lg:pt-1">
             Want To Work With Us?
@@ -14,7 +15,7 @@ const About = () => {
             the conversation. We're here to listen and respond promptly.
           </p>
           <div className="flex-col pt-7 mx-auto lg:mx-0">
-            <div className="flex justify-evenly duration-200 hover:scale-105 ease-in-out items-center bg-gray-100 dark:bg-slate-700 rounded-xl border shadow-xl  border-gray-500 my-5 w-96 h-24">
+            <div className="flex justify-evenly duration-200 hover:scale-105 ease-in-out items-center bg-gray-100 dark:bg-slate-700 rounded-xl border shadow-xl  border-gray-500 my-5 w-64 sm:w-96 h-24">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -31,7 +32,7 @@ const About = () => {
               </svg>
               <div className="flex-col">
                 Email Us:
-                <div className=" font-bold text-xl text-pink-conjury">support@conjury.dev</div>
+                <div className=" font-bold text-lg sm:text-xl">support@conjury.dev</div>
               </div>
             </div>
             <a
@@ -39,7 +40,7 @@ const About = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="flex justify-evenly duration-200 hover:scale-105 ease-in-out items-center bg-gray-100 dark:bg-slate-700 rounded-xl border shadow-xl border-gray-500 my-5 w-96 h-24">
+              <div className="flex justify-evenly duration-200 hover:scale-105 ease-in-out items-center bg-gray-100 dark:bg-slate-700 rounded-xl border shadow-xl border-gray-500 my-5 w-64 sm:w-96 h-24">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -57,7 +58,7 @@ const About = () => {
 
                 <div className="flex-col">
                   Message Us:
-                  <div className="font-bold text-xl text-pink-conjury">
+                  <div className="font-bold text-lg sm:text-xl ">
                     Add Facebook link here
                   </div>
                 </div>
