@@ -21,6 +21,16 @@
   background: #F198FF; /* Gecko Browsers */
 }
 
+/*for pink text*/
+
+.text-pink-conjury::selection {
+  background: #43f9ff; /* WebKit/Blink Browsers */
+}
+.text-pink-conjury::-moz-selection {
+  background: #43f9ff; /* Gecko Browsers */
+}
+
+
 /*google fonts*/
 body {
   font-family: 'Mukta', sans-serif;
