@@ -48,7 +48,7 @@ const Form = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-white dark:bg-slate-800">
       <div className="container mx-auto relative z-10">
-        <div className="max-w-md mx-auto my-10 bg-gray-100 p-5 rounded-md shadow-sm dark:bg-slate-900">
+        <div className="max-w-md mx-auto my-10 bg-gray-100 p-5  rounded-md shadow-sm dark:bg-slate-900">
           <div className="text-center">
             <h1 className="my-3 text-3xl font-semibold text-black dark:text-gray-200">
               Contact Us
@@ -127,7 +127,7 @@ const Form = () => {
               <div className="mb-6">
                 <button
                   type="submit"
-                  className="w-full hover:scale-105 duration-200 ease-in-out px-3 py-4 text-white bg-pink-conjury rounded-md focus:bg-indigo-600 focus:outline-none"
+                  className="w-full hover:scale-105 duration-200 ease-in-out px-3 py-4 text-white bg-pink-conjury rounded-md focus:bg-blue-conjury focus:outline-none"
                 >
                   Send Message
                 </button>

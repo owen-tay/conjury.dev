@@ -11,7 +11,7 @@ const Home = () => {
           <div class="fadein relative    text-pink-conjury text-xl mt-10 font-bold sm:m-24 sm:text-2xl md:text-4xl md:m-32  lg:m-32 xl:mx-64 lg:text-4xl flex items-center text-center justify-center h-full">
             We are Conjury. We make great websites.{" "}
           </div>
-          <div class="fadein relative    text-xl m-16 sm:m-24 sm:text-2xl md:text-4xl md:m-32  lg:m-32 xl:mx-64 lg:text-4xl flex items-center text-center justify-center h-full">
+          <div class="fadein relative    text-xl m-10 sm:m-24 sm:text-2xl md:text-4xl md:m-32  lg:m-32 xl:mx-64 lg:text-4xl flex items-center text-center justify-center h-full">
             Conjury.dev, a recently established web development and design
             agency based in Glasgow, passionately embraces the world of digital
             creativity. With a genuine passion for crafting exceptional
