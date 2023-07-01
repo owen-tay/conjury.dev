@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import ContactSvg from "./images/contactpage.svg";
-
+import Form from "./form";
 
 const About = () => {
+  const [showForm, setShowForm] = useState(false);
+  const formRef = useRef(null);
+
+  useEffect(() => {
+    if (showForm && formRef.current) {
+      setTimeout(() => {
+        formRef.current.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [showForm]);
+
+  const handleFormClick = () => {
+    setShowForm((prevState) => !prevState);
+  };
+
   return (
     <div className="container mx-auto pt-8">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 mx-12">
         <div className="lg:order-1 flex flex-col justify-center text-center lg:text-left">
-          <h1 className="text-pink-conjury text-5xl pt-12  lg:pt-1">
+          <h1 className="text-pink-conjury text-5xl pt-3 md:pt-12  lg:pt-1">
             Want To Work With Us?
           </h1>
           <p className="text-xl pt-6">
@@ -32,7 +47,9 @@ const About = () => {
               </svg>
               <div className="flex-col">
                 Email Us:
-                <div className=" font-bold text-lg sm:text-xl">support@conjury.dev</div>
+                <div className=" font-bold text-lg sm:text-xl">
+                  support@conjury.dev
+                </div>
               </div>
             </div>
             <a
@@ -64,15 +81,48 @@ const About = () => {
                 </div>
               </div>
             </a>
+            <div
+              id="Form"
+              onClick={handleFormClick}
+              className="flex justify-evenly duration-200 hover:scale-105 ease-in-out items-center bg-gray-100 dark:bg-slate-700 rounded-xl border shadow-xl  border-gray-500 my-5 w-64 sm:w-96 h-24 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-12 h-12"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.076-4.076a1.526 1.526 0 011.037-.443 48.282 48.282 0 005.68-.494c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
+                />
+              </svg>
+
+              <div className="flex-col">
+                Fill In Our Form:
+                <div className=" font-bold text-lg sm:text-xl">
+                  Click To Show The Form.
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div className="lg:order-2 flex justify-center">
           <img
             src={ContactSvg}
             alt="Contact Image"
-            className=" w-1/2 lg:w-2/3 mt-10"
-          ></img>
+            className="w-2/2 lg:w-2/3 mt-10"
+          />
         </div>
+      </div>
+      <div
+        style={{ visibility: showForm ? "visible" : "hidden" }}
+        ref={formRef}
+      >
+        {showForm && <Form />}
       </div>
     </div>
   );

@@ -31,7 +31,9 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  height: 100%;
 }
+
 
 /*dark mode toggle*/
 
@@ -39,3 +41,56 @@ body {
   @apply hidden;
 }
 
+/*animation*/
+/*header text*/
+.fadein {
+  animation: fadeInAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+/*header text bg*/
+
+
+
+.fadeinslow {
+  animation: fadeInAnimationslow ease 10s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+
+.slide-top-fast {
+	-webkit-animation: slide-top-fast 1.2s ease-in-out infinite alternate both;
+	        animation: slide-top-fast 1.2s ease-in-out infinite alternate both;
+}
+
+@-webkit-keyframes slide-top-fast {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
+  @keyframes slide-top-fast {
+    0% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+    }
+    100% {
+      -webkit-transform: translateY(-20px);
+              transform: translateY(-20px);
+    }
+  }
