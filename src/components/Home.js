@@ -19,22 +19,22 @@ const Home = () => {
     };
   }, []);
 
+  const getVideoSource = () => {
+    if (theme === "dark") {
+      return VideoDark;
+    } else {
+      return VideoWhite;
+    }
+  };
+
   return (
     <div className="relative">
-      {theme === "light" && (
+      {theme && (
         <video className="absolute top-0 left-0 w-full h-full object-cover z-0" autoPlay loop muted>
-          <source src={VideoWhite} type="video/mp4" />
+          <source src={getVideoSource()} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
-
-      {theme === "dark" && (
-        <video className="absolute top-0 left-0 w-full h-full object-cover z-0" autoPlay loop muted>
-          <source src={VideoDark} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
-
       <div className="homeHeader pb-10 h-screen flex flex-col justify-center md:justify-end relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="w-full md:w-1/2 mb-10">
