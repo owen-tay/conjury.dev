@@ -23,9 +23,10 @@ const Home = () => {
     if (theme === "dark") {
       return VideoDark;
     } else {
-      return theme ? VideoWhite : VideoWhite;
+      return VideoWhite;
     }
   };
+  
 
   return (
     <div className="relative">
