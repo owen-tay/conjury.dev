@@ -39,7 +39,7 @@ const Home = () => {
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="w-full md:w-1/2 mb-10">
             <div className="text-xl">
-              <div className="title fadein py-5 text-5xl sm:text-6xl lg:text-6xl xl:text-8xl 2xl:text-8xl relative text-pink-conjury font-bold text-center md:text-left">
+              <div className="title fadein py-5 text-5xl sm:text-6xl lg:text-6xl xl:text-8xl 2xl:text-8xl relative text-black dark:text-white font-bold text-center md:text-left">
                 We are Conjury. We make great websites.
               </div>
               <div className=" title fadein relative text-xl text-center md:text-left md:text-2xl xl:text-2xl">
