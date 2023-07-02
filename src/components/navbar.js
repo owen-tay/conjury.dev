@@ -6,6 +6,7 @@ import SunlightSvg from "./images/sunlight.svg";
 import MoonlightSvg from "./images/moonlight.svg";
 import ConjuryLogo from "./images/ConjuryLogo.svg";
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
+import Home from "./Home"; // Import the Home component
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -83,7 +84,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`bg-gray-100 ${
+      className={`bg-white ${
         isDarkMode ? "dark:bg-slate-800" : "dark:bg-white"
       } mb-3 fixed top-0 left-0 w-full z-50`}
     >
@@ -91,7 +92,11 @@ function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center px-4 md:px-0">
             <Link to="/" onClick={closeMobileMenu}>
-              <img src={NavImage} className="h-12  hover:stroke-pink-conjury rounded-2xl transition-colors duration-300" alt="Logo" />
+              <img
+                src={ConjuryLogo}
+                className="h-28 pb-2  hover:stroke-pink-conjury duration-200 hover:scale-105 rounded-2xl transition-colors"
+                alt="Logo"
+              />
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-4">
@@ -188,17 +193,14 @@ function Navbar() {
           </div>
         </div>
 
-        <div
-          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
-            isMobileMenuOpen ? "h-screen" : "h-0"
-          }`}
+        <div className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? "h-screen" : "h-0"}`}
           style={{
             opacity: isMobileMenuOpen ? 1 : 0,
           }}
         >
           <div
             id="navDiv"
-            className="bg-gray-100 dark:bg-slate-800 px-4 md:px-0 text-4xl"
+            className="bg-white dark:bg-slate-800 px-4 md:px-0 text-4xl"
             ref={menuRef}
             style={{
               transition: "height 0.3s, opacity 2s",
@@ -240,6 +242,10 @@ function Navbar() {
           </div>
         </div>
       </div>
+      
+      {/* Pass isDarkMode state and toggleDarkMode function to the Home component */}
+      <Home isDarkMode={isDarkMode} />
+      
     </nav>
   );
 }

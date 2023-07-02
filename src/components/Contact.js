@@ -74,9 +74,9 @@ const About = () => {
                 </svg>
 
                 <div className="flex-col">
-                  Message Us:
+                  Facebook:
                   <div className="font-bold text-lg sm:text-xl ">
-                    Add Facebook link here
+                    Message Us On Facebook
                   </div>
                 </div>
               </div>
@@ -102,9 +102,9 @@ const About = () => {
               </svg>
 
               <div className="flex-col">
-                Fill In Our Form:
+                Message Us:
                 <div className=" font-bold text-lg sm:text-xl">
-                  Click To Show The Form.
+                  Fill In Our Contact Form
                 </div>
               </div>
             </div>
