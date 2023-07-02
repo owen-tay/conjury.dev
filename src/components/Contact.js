@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import ContactSvg from "./images/contactpage.svg";
 import Form from "./form";
 
-const About = () => {
+const Contact = () => {
   const [showForm, setShowForm] = useState(false);
   const formRef = useRef(null);
 
@@ -128,4 +128,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Contact;
