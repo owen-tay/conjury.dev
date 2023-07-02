@@ -12,6 +12,13 @@ const Home = () => {
       setTheme(localStorage.getItem("theme"));
     };
 
+    if (!localStorage.getItem("theme")) {
+      localStorage.setItem("theme", "light");
+      setTheme("light");
+    } else {
+      setTheme(localStorage.getItem("theme"));
+    }
+
     window.addEventListener("storage", handleStorageChange);
 
     return () => {
@@ -26,16 +33,13 @@ const Home = () => {
       return VideoWhite;
     }
   };
-  
 
   return (
     <div className="relative">
-      {theme && (
-        <video className="absolute top-0 left-0 w-full h-full object-cover z-0" autoPlay loop muted>
-          <source src={getVideoSource()} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      )}
+      <video className="absolute top-0 left-0 w-full h-full object-cover z-0" autoPlay loop muted>
+        <source src={getVideoSource()} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <div className="homeHeader pb-10 h-screen flex flex-col justify-center md:justify-end relative z-10">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="w-full md:w-1/2 mb-10">
@@ -51,7 +55,7 @@ const Home = () => {
                 on their exciting journey of creating captivating online
                 experiences.
               </div>
-              <a className="downbutton w-5" >
+              <a className="downbutton w-5">
                 <img
                   className="downbutton drop-shadow-xl pt-8 w-16 2xl:pt-12 2xl:w-24 slide-top-fast flex mx-auto hover:w-20 ease-in-out duration-300"
                   src={DownSvg}
