@@ -23,7 +23,7 @@ const Home = () => {
     if (theme === "dark") {
       return VideoDark;
     } else {
-      return VideoWhite;
+      return theme ? VideoWhite : VideoWhite;
     }
   };
 
