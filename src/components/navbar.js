@@ -1,3 +1,4 @@
+import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Link } from "react-router-dom";
 import NavImage from "./images/NavImage.svg";
 import SunSvg from "./images/sun.svg";
@@ -5,8 +6,6 @@ import MoonSvg from "./images/moon.svg";
 import SunlightSvg from "./images/sunlight.svg";
 import MoonlightSvg from "./images/moonlight.svg";
 import ConjuryLogo from "./images/ConjuryLogo.svg";
-import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
-import Home from "./Home"; // Import the Home component
 
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -36,6 +35,7 @@ function Navbar() {
   };
 
   const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       localStorage.theme = "light";
@@ -43,58 +43,37 @@ function Navbar() {
       document.documentElement.classList.add("dark");
       localStorage.theme = "dark";
     }
-    setIsDarkMode(!isDarkMode);
   };
 
   const getMoonIcon = () => {
-    if (isDarkMode) {
-      return (
-        <img
-          src={MoonlightSvg}
-          className="h-5 w-6 dark:text-white"
-          alt="Moon Icon"
-        />
-      );
-    } else {
-      return (
-        <img
-          src={MoonSvg}
-          className="h-6 w-6 dark:text-white"
-          alt="Moon Icon"
-        />
-      );
-    }
+    return (
+      <img
+        src={isDarkMode ? MoonlightSvg : MoonSvg}
+        className="h-6 w-6 dark:text-white"
+        alt="Moon Icon"
+      />
+    );
   };
 
   const getSunIcon = () => {
-    if (isDarkMode) {
-      return (
-        <img
-          src={SunlightSvg}
-          className="h-6 w-6 dark:text-white"
-          alt="Sun Icon"
-        />
-      );
-    } else {
-      return (
-        <img src={SunSvg} className="h-6 w-6 dark:text-black" alt="Sun Icon" />
-      );
-    }
+    return (
+      <img
+        src={isDarkMode ? SunlightSvg : SunSvg}
+        className="h-6 w-6 dark:text-white"
+        alt="Sun Icon"
+      />
+    );
   };
 
   return (
-    <nav
-      className={`bg-white ${
-        isDarkMode ? "dark:bg-slate-800" : "dark:bg-white"
-      } mb-3 fixed top-0 left-0 w-full z-50`}
-    >
+    <nav className={`bg-gray-100 ${isDarkMode ? "dark:bg-slate-800" : "dark:bg-white"} mb-3 fixed top-0 left-0 w-full z-50`}>
       <div className="max-w-7xl mx-auto md:px-6 lg:px-8 text-2xl">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center px-4 md:px-0">
             <Link to="/" onClick={closeMobileMenu}>
               <img
                 src={ConjuryLogo}
-                className="h-28 pb-2  hover:stroke-pink-conjury duration-200 hover:scale-105 rounded-2xl transition-colors"
+                className="h-28 pb-2 hover:stroke-pink-conjury duration-200 hover:scale-105 rounded-2xl transition-colors"
                 alt="Logo"
               />
             </Link>
@@ -131,9 +110,7 @@ function Navbar() {
             <button
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 ${
-                isDarkMode
-                  ? "dark:text-white dark:hover:bg-slate-600"
-                  : "dark:text-black"
+                isDarkMode ? "dark:text-white dark:hover:bg-slate-600" : "dark:text-black"
               } focus:outline-none focus:ring-3 focus:ring-inset`}
               onClick={toggleDarkMode}
             >
@@ -145,9 +122,7 @@ function Navbar() {
             <button
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 ${
-                isDarkMode
-                  ? "dark:text-white dark:hover:bg-slate-600"
-                  : "dark:text-black"
+                isDarkMode ? "dark:text-white dark:hover:bg-slate-600" : "dark:text-black"
               } focus:outline-none focus:ring-3 focus:ring-inset`}
               onClick={toggleDarkMode}
             >
@@ -168,12 +143,7 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
               <svg
                 className={`${isMobileMenuOpen ? "block" : "hidden"} h-6 w-6`}
@@ -182,31 +152,29 @@ function Navbar() {
                 viewBox="0 0 24 24"
                 aria-hidden="true"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M6 18L18 6M6 6l12 12"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
         </div>
 
-        <div className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMobileMenuOpen ? "h-screen" : "h-0"}`}
+        <div
+          className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+            isMobileMenuOpen ? "h-screen" : "h-0"
+          }`}
           style={{
             opacity: isMobileMenuOpen ? 1 : 0,
           }}
         >
           <div
             id="navDiv"
-            className="bg-white dark:bg-slate-800 px-4 md:px-0 text-4xl"
+            className="bg-gray-100 dark:bg-slate-800 px-4 md:px-0 text-4xl"
             ref={menuRef}
             style={{
               transition: "height 0.3s, opacity 2s",
               opacity: isMobileMenuOpen ? 1 : 0,
               height: isMobileMenuOpen ? "max-content" : 0,
-              display: isMobileMenuOpen ? "block" : "block",
+              display: isMobileMenuOpen ? "block" : "none",
             }}
           >
             <div className="flex flex-col items-end">
@@ -242,10 +210,6 @@ function Navbar() {
           </div>
         </div>
       </div>
-      
-      {/* Pass isDarkMode state and toggleDarkMode function to the Home component */}
-      <Home isDarkMode={isDarkMode} />
-      
     </nav>
   );
 }
