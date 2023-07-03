@@ -68,9 +68,10 @@ body {
    }
 }
 
-/*header text bg*/
-
-
+/*homepage images*/
+.homeimage1 {
+  margin-left: -5rem;
+}
 
 .fadeinslow {
   animation: fadeInAnimationslow ease 10s;
