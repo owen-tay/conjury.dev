@@ -4,6 +4,7 @@ import "./index.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import Services from "./components/services";
 import PageNotFound from "./components/PageNotFound";
 import Navbar from "./components/navbar";
 
@@ -13,21 +14,22 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   const updateVideoSource = () => {
-    setIsDarkMode(prevMode => !prevMode);
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
   return (
     <div>
-      <DarkModeContext.Provider value={{ isDarkMode, setIsDarkMode, updateVideoSource }}>
+      <DarkModeContext.Provider
+        value={{ isDarkMode, setIsDarkMode, updateVideoSource }}
+      >
         <Router>
           <Navbar />
           <div className="mt-16"></div>
           <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
+            <Route path="/" element={<Home />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/Services" element={<Services />} />
+
             <Route path="*" element={<Home />} />
           </Routes>
         </Router>

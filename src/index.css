@@ -58,6 +58,11 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+.fadeinfast {
+  animation: fadeInAnimation ease 1.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
 @keyframes fadeInAnimation {
   0% {
@@ -73,35 +78,45 @@ body {
   margin-left: -5rem;
 }
 
+
+/*animations*/
+
 .fadeinslow {
   animation: fadeInAnimationslow ease 10s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-
-.slide-top-fast {
-	-webkit-animation: slide-top-fast 1.2s ease-in-out infinite alternate both;
-	        animation: slide-top-fast 1.2s ease-in-out infinite alternate both;
+.slide-left {
+  opacity: 0;
+  transform: translateX(150px);
+  animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }
 
-@-webkit-keyframes slide-top-fast {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-20px);
-              transform: translateY(-20px);
-    }
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(150px);
   }
-  @keyframes slide-top-fast {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-20px);
-              transform: translateY(-20px);
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
   }
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(-150px);
+  animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translateX(-150px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

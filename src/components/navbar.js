@@ -37,8 +37,6 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
-
-  
   const toggleDarkMode = () => {
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
@@ -82,22 +80,9 @@ function Navbar() {
       );
     } else {
       return (
-        <img
-          src={SunSvg}
-          className="h-6 w-6 dark:text-black"
-          alt="Sun Icon"
-        />
+        <img src={SunSvg} className="h-6 w-6 dark:text-black" alt="Sun Icon" />
       );
     }
-  };
-
-  const scrollToServices = () => {
-    scroller.scrollTo("services", {
-      duration: 500,
-      smooth: true,
-      offset: -50, // Offset for the navbar height if needed
-      
-    });
   };
 
   return (
@@ -126,26 +111,12 @@ function Navbar() {
               Contact
             </Link>
             <Link
-              to="/"
+              to="/Services"
               className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-              onClick={scrollToServices} // Scroll to "services" ID
             >
               Services
             </Link>
-            <Link
-              to="/listings"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-              onClick={closeMobileMenu}
-            >
-              Listings
-            </Link>
-            <Link
-              to="/profile"
-              className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-              onClick={closeMobileMenu}
-            >
-              Profile
-            </Link>
+
             <button
               type="button"
               className={`inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:bg-gray-200 ${
@@ -239,28 +210,13 @@ function Navbar() {
                 Contact
               </Link>
               <Link
-  to="/"
-  className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-  onClick={() => {
-    closeMobileMenu();
-    scrollToServices();
-  }}
->
-  Services
-</Link>
-              <Link
-                to="/listings"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-                onClick={closeMobileMenu} 
+                to="/Services"
+                className="block transition-colors duration-300 dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
+                onClick={() => {
+                  closeMobileMenu();
+                }}
               >
-                Listings
-              </Link>
-              <Link
-                to="/profile"
-                className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
-                onClick={closeMobileMenu}
-              >
-                Profile
+                Services
               </Link>
             </div>
           </div>

@@ -91,64 +91,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="h-screen" id="services">
-        <h1 className=" py-36 text-6xl text-pink-conjury text-center">
-          Our Services
-        </h1>
-
-        <div className="flex flex-col gap-10 lg:flex-row md:justify-evenly mx-6 lg:mx-32">
-          <div className="w-full lg:w-1/2  flex flex-col items-center justify-center">
-            <h2 className=" text-4xl text-center lg:text-left  lg:text-6xl text-pink-conjury">
-              Wev Design and Development
-            </h2>
-            <div className="pt-4 text-2xl">
-              We will help you bring your dream website to reality with a focus
-              on responsive design and stunning aesthetics. Our comprehensive
-              web design and development services are tailored to cater to your
-              specific needs and goals, ensuring that your website not only
-              looks and functions flawlessly across all devices and screen
-              sizes, but also boasts an exceptional visual design that
-              captivates your audience. We believe that a great website goes
-              beyond functionality, and we strive to create visually stunning
-              websites that leave a lasting impression on your visitors.
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 mb-10 flex justify-center items-center">
-            <img
-              src={imageOne}
-              className="rounded-2xl w-full "
-              alt="image one"
-            />
-          </div>
-        </div>
-        <div className="flex flex-col gap-10 lg:flex-row md:justify-evenly mx-6 lg:mx-32">
-          <div className=" lg:w-1/2 flex flex-col items-center justify-center lg:order-last">
-            <h2 className=" text-4xl text-center lg:text-left  lg:text-6xl text-pink-conjury">
-              Ecommerce Solutions
-            </h2>
-            <div className="pt-4 text-2xl">
-              Our Ecommerce Solutions service is tailored for companies seeking
-              to create exceptional online shopping experiences. With expertise
-              in designing and building ecommerce sites, we provide
-              comprehensive functionality through platforms like WooCommerce and
-              Shopify. Let us help you enhance your online presence and maximize
-              your sales potential.
-            </div>
-          </div>
-          <div className="w-full lg:w-1/2 mb-10 flex justify-center items-center lg:order-first">
-            <img
-              src={imageOne}
-              className="rounded-2xl w-full"
-              alt="image one"
-            />
-          </div>
-        </div>
-        <div className="">
-          <h1 className=" pt-20 text-6xl text-pink-conjury text-center">
-            Our Services
-          </h1>
-        </div>
-      </div>
+  
     </div>
   );
 };
