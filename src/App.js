@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useLocation, BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import "./index.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Services from "./components/services";
@@ -9,6 +9,16 @@ import PageNotFound from "./components/PageNotFound";
 import Navbar from "./components/navbar";
 
 export const DarkModeContext = React.createContext();
+
+function ScrollToTop() {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -24,6 +34,7 @@ function App() {
       >
         <Router>
           <Navbar />
+          <ScrollToTop />
           <div className="mt-16"></div>
           <Routes>
             <Route path="/" element={<Home />} />
