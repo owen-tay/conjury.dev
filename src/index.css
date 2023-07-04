@@ -11,6 +11,20 @@
   width: 100%;
 }
 
+/*homepage rounded bot*/
+
+.roundededge {
+  padding-top: 6rem;
+border-top-left-radius: 50%;
+border-top-right-radius: 50%;
+}
+
+/*service Background*/
+
+.serviceBG {
+  background: url("./components/images/bulb.jpg") no-repeat center;
+  background-size:cover;
+}
 
 /*selection colour*/
 

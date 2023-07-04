@@ -84,18 +84,18 @@ const Services = () => {
 
   return (
     <div className="fadein">
-      <div className="h-screen" id="services">
-        <h1 className="py-36 text-6xl text-pink-conjury text-center">
+      <div className=" " id="services">
+        <h1 className="py-10 my-10 text-6xl text-pink-conjury text-center ">
           Our Services
         </h1>
 
         <div className="flex flex-col gap-10 lg:flex-row md:justify-evenly mx-6 lg:mx-32">
           <div className="w-full lg:w-1/2 flex flex-col items-center justify-center">
-            <h2 className="text-4xl text-center lg:text-left lg:text-6xl text-pink-conjury">
+            <h2 className="text-3xl text-center lg:text-left lg:text-6xl text-pink-conjury">
               Web Design and Development
             </h2>
-            <div className="pt-4 text-2xl">
-              <div ref={slideLeftRef}>
+            <div className="pt-4 text-xl lg:text-2xl">
+              <div className="pb- pt-2" ref={slideLeftRef}>
                 We will help you bring your dream website to reality with a
                 focus on responsive design and stunning aesthetics. Our
                 comprehensive web design and development services are tailored
@@ -103,7 +103,7 @@ const Services = () => {
               </div>
               <div>
                 <h2
-                  className="text-pink-conjury text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105 hover:text-pink-100 underline pt-3"
+                  className="text-pink-conjury text-2xl lg:text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105  underline pt-1"
                   onClick={() => handleTextToggle("wordpress")}
                 >
                   Wordpress{" "}
@@ -114,19 +114,20 @@ const Services = () => {
                   )}
                 </h2>
                 {showText.wordpress && (
-                  <p className="fadeinfast">
-                    We can create and host a WordPress website for you, tailored to
-                    your unique needs and preferences. With our
-                    extensive experience in WordPress development, we ensure
-                    seamless integration of essential features and functionalities
-                    to enhance your online presence. Whether you're an individual, a
-                    small business, or a large enterprise, our WordPress solutions
-                    are scalable and adaptable to grow alongside your ambitions.
+                  <p className="fadeinfast text-lg lg:text-2xl">
+                    We can create and host a WordPress website for you, tailored
+                    to your unique needs and preferences. With our extensive
+                    experience in WordPress development, we ensure seamless
+                    integration of essential features and functionalities to
+                    enhance your online presence. Whether you're an individual,
+                    a small business, or a large enterprise, our WordPress
+                    solutions are scalable and adaptable to grow alongside your
+                    ambitions.
                   </p>
                 )}
               </div>
               <h2
-                className="text-pink-conjury text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105 hover:text-pink-100 underline pt-3"
+                className="text-pink-conjury text-2xl lg:text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105  underline pt-3"
                 onClick={() => handleTextToggle("custom")}
               >
                 Custom Website{" "}
@@ -137,21 +138,21 @@ const Services = () => {
                 )}
               </h2>
               {showText.custom && (
-                <p className="fadeinfast">
+                <p className="fadeinfast text-lg lg:text-2xl">
                   We specialize in crafting custom websites that perfectly align
-                  with your unique vision. Our expertise lies in creating tailored
-                  solutions that cater to your specific goals and requirements.
-                  With meticulous attention to detail, we ensure your website
-                  reflects your brand identity and delivers an exceptional user
-                  experience. From striking design elements to seamless
-                  functionality, we bring your ideas to life, making sure your
-                  website stands out from the competition. Let us build a custom
-                  website that showcases your distinct personality and helps you
-                  achieve your online goals.
+                  with your unique vision. Our expertise lies in creating
+                  tailored solutions that cater to your specific goals and
+                  requirements. With meticulous attention to detail, we ensure
+                  your website reflects your brand identity and delivers an
+                  exceptional user experience. From striking design elements to
+                  seamless functionality, we bring your ideas to life, making
+                  sure your website stands out from the competition. Let us
+                  build a custom website that showcases your distinct
+                  personality and helps you achieve your online goals.
                 </p>
               )}
               <h2
-                className="text-pink-conjury text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105 hover:text-pink-100 underline pt-3"
+                className="text-pink-conjury text-2xl lg:text-5xl my-2 cursor-pointer w-fit duration-100 hover:scale-105  underline pt-3"
                 onClick={() => handleTextToggle("fullStack")}
               >
                 Full Stack Website{" "}
@@ -162,19 +163,14 @@ const Services = () => {
                 )}
               </h2>
               {showText.fullStack && (
-                <p className="fadeinfast">
-                  Our full stack web development expertise combines cutting-edge
-                  technologies, including React, to build dynamic and robust
-                  websites. With a comprehensive understanding of front-end and
-                  back-end development, we create immersive user interfaces and
-                  powerful functionalities. Leveraging the versatility of React,
-                  our team develops highly responsive and interactive websites
-                  that provide an unparalleled user experience. From seamless
-                  navigation to efficient data handling, we ensure your website is
-                  optimized for speed and performance. Trust us to deliver a full
-                  stack website that embodies innovation, scalability, and modern
-                  web standards, empowering your digital presence for maximum
-                  impact.
+                <p className="fadeinfast text-lg lg:text-2xl">
+                  We excel in full stack web development, utilizing React and
+                  other advanced technologies. Our expertise creates dynamic and
+                  robust websites with captivating user interfaces and powerful
+                  functionalities. By leveraging React's versatility, we deliver
+                  highly responsive and interactive websites for an exceptional
+                  user experience. Our optimized solutions ensure fast and
+                  efficient navigation and data handling.
                 </p>
               )}
             </div>
@@ -217,7 +213,6 @@ const Services = () => {
             />
           </div>
         </div>
-
       </div>
     </div>
   );
