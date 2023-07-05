@@ -6,8 +6,7 @@ import { ReactComponent as DownArrow } from "./images/down-arrow.svg";
 import { ReactComponent as UpArrow } from "./images/up-arrow.svg";
 
 const Services = () => {
-  const slideLeftRef = useRef(null);
-  const slideRightRef = useRef(null);
+
   const [isVisible, setIsVisible] = useState(false);
   const [showText, setShowText] = useState({
     wordpress: false,
@@ -39,47 +38,7 @@ const Services = () => {
       threshold: 0.5, // Adjust this value as needed
     };
 
-    const slideLeftObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("slide-left");
-          setIsVisible(true);
-        } else {
-          entry.target.classList.remove("slide-left");
-          setIsVisible(false);
-        }
-      });
-    }, options);
 
-    const slideRightObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("slide-right");
-          setIsVisible(true);
-        } else {
-          entry.target.classList.remove("slide-right");
-          setIsVisible(false);
-        }
-      });
-    }, options);
-
-    if (slideLeftRef.current) {
-      slideLeftObserver.observe(slideLeftRef.current);
-    }
-
-    if (slideRightRef.current) {
-      slideRightObserver.observe(slideRightRef.current);
-    }
-
-    return () => {
-      if (slideLeftRef.current) {
-        slideLeftObserver.unobserve(slideLeftRef.current);
-      }
-
-      if (slideRightRef.current) {
-        slideRightObserver.unobserve(slideRightRef.current);
-      }
-    };
   }, []);
 
   return (
@@ -95,7 +54,7 @@ const Services = () => {
               Web Design and Development
             </h2>
             <div className="pt-4 text-xl lg:text-2xl">
-              <div className="pb- pt-2" ref={slideLeftRef}>
+              <div className="pb- pt-2" >
                 We will help you bring your dream website to reality with a
                 focus on responsive design and stunning aesthetics. Our
                 comprehensive web design and development services are tailored
@@ -177,22 +136,21 @@ const Services = () => {
           </div>
           <div className="w-full lg:w-1/2 mb-10 flex justify-center items-center">
             <img
-              ref={slideLeftRef}
+
               src={imageOne}
-              className={`slide-left rounded-2xl w-full ${
-                isVisible ? "" : "opacity-0"
-              }`}
+              className="rounded-2xl w-full"
+
               alt="image one"
             />
           </div>
         </div>
-        <div className="flex pt-16 flex-col gap-10 lg:flex-row md:justify-evenly mx-6 lg:mx-32 bg-sla">
+        <div className="flex pt-16 flex-col gap-10 lg:flex-row md:justify-evenly mx-6  bg-sla">
           <div className="lg:w-1/2 flex flex-col items-center justify-center lg:order-last">
             <h2 className="text-4xl text-center lg:text-left lg:text-6xl text-pink-conjury">
               Ecommerce Solutions
             </h2>
             <div className="pt-4 text-2xl">
-              <div ref={slideRightRef}>
+              <div >
                 Our Ecommerce Solutions service is tailored for companies
                 seeking to create exceptional online shopping experiences. With
                 expertise in designing and building ecommerce sites, we provide
@@ -204,11 +162,9 @@ const Services = () => {
           </div>
           <div className="w-full lg:w-1/2 mb-10 flex justify-center items-center lg:order-first">
             <img
-              ref={slideRightRef}
+              
               src={imageTwo}
-              className={`slide-right rounded-2xl w-full ${
-                isVisible ? "" : "opacity-0"
-              }`}
+              className="slide-right rounded-2xl w-full"
               alt="image one"
             />
           </div>

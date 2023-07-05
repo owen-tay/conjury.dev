@@ -144,7 +144,7 @@ const Home = () => {
               {" "}
               <div className="hover:scale-110 ease-in-out duration-300">
                 <img
-                  className="drop-shadow-xl pt-8 w-16 2xl:pt-12 2xl:w-24 slide-top-fast flex mx-auto ease-in-out duration-300"
+                  className="drop-shadow-xl pt-8 w-fit 2xl:pt-12 2xl:w-fit slide-top-fast flex mx-auto ease-in-out duration-300"
                   src={DownSvg}
                   alt="down button"
                 />
@@ -155,7 +155,7 @@ const Home = () => {
           <div class="w-full lg:w-1/2 mb-32 flex justify-center items-center ">
             <img
               src={PcPic}
-              class="flex slide-left m-6 rounded-2xl lg:w-fit items-center"
+              class="flex  m-6 rounded-2xl lg:w-fit items-center"
               alt="image one"
             />
           </div>
@@ -179,7 +179,7 @@ const Home = () => {
           id="homescreen3"
           className="h-[50vh] bg-pink-conjury dark:bg-slate-700"
         >
-          <div className="flex pt-10 justify-center mx-36 sm:mx-52">
+          <div className="flex pt-10 justify-center  sm:mx-52">
             <div className="">
               <Link to="/Services">
                 <div className="bg-white dark:bg-slate-800 py-4 px-5 text-2xl sm:text-3xl rounded-3xl text-center w-60 sm:w-72 hover:scale-105 duration-150 ease-in-out">
