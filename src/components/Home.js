@@ -144,7 +144,7 @@ const Home = () => {
               {" "}
               <div className="hover:scale-110 ease-in-out duration-300">
                 <img
-                  className="drop-shadow-xl pt-8 w-fit 2xl:pt-12 2xl:w-fit slide-top-fast flex mx-auto ease-in-out duration-300"
+                  className="drop-shadow-xl pt-8 w-16 2xl:pt-12 2xl:w-24 slide-top-fast flex mx-auto ease-in-out duration-300"
                   src={DownSvg}
                   alt="down button"
                 />
@@ -166,10 +166,10 @@ const Home = () => {
         id="homescreen3"
         className="h-[50vh] bg-pink-conjury dark:bg-slate-700"
       >
-        <h3 className="text-3xl md:text-5xl text-center text-white underline">
+        <h3 className="text-3xl md:text-5xl text-center text-white ">
           Trust Us With Your Web Presence.
         </h3>
-        <p className="fadeinfast text-md sm:text-xl lg:text-4xl mx-7 lg:mx-64 text-white pt-8">
+        <p className="fadeinfast text-md sm:text-xl lg:text-4xl mx-7 lg:mx-72 text-white pt-8">
           We are a newly established agency eager to make a mark in the market,
           so we offer highly competitive rates. We are available to discuss all
           aspects of your new website or provide professional consultations.
@@ -182,23 +182,19 @@ const Home = () => {
           <div className="flex pt-10 justify-center  sm:mx-52">
             <div className="">
               <Link to="/Services">
-                <div className="bg-white dark:bg-slate-800 py-4 px-5 text-2xl sm:text-3xl rounded-3xl text-center w-60 sm:w-72 hover:scale-105 duration-150 ease-in-out">
+                <div
+                  className="bg-white shadow-md
+                 dark:bg-slate-800 py-4 px-5 text-2xl sm:text-3xl rounded-3xl text-center w-60 sm:w-72 hover:scale-105 duration-150 ease-in-out"
+                >
                   View Our Services
                 </div>
               </Link>
               <Link to="/contact">
-                <div className="bg-white dark:bg-slate-800 text-2xl sm:text-3xl py-4 px-5 rounded-3xl text-center w-60 sm:w-72 hover:scale-105 duration-150 ease-in-out mt-5">
+                <div className="bg-white dark:bg-slate-800 shadow-md text-2xl sm:text-3xl py-4 px-5 rounded-3xl text-center w-60 sm:w-72 hover:scale-105 duration-150 ease-in-out mt-5">
                   Contact Us
                 </div>
               </Link>
             </div>
-            
-          </div>
-          <div className="flex justify-center items-center mt-10 ">
-          <a className="downbutton cursor-pointer" onClick={scrolltotop}>
-
-            <img src={Logo} alt="logo" className="mx-auto w-52 sm:w-96 pt-8" />
-            </a>
           </div>
 
         </div>

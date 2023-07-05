@@ -53,7 +53,7 @@ const Contact = () => {
               </div>
             </div>
             <a
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/profile.php?id=100094065408260/"
               target="_blank"
               rel="noopener noreferrer"
             >
