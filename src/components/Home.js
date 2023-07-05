@@ -83,7 +83,7 @@ const Home = () => {
                 </div>
                 <div className=" title fadein relative text-xl text-center md:text-left md:text-2xl xl:text-2xl">
                   We are a recently established web development and design
-                  agency based in Glasgow, passionately embraces the world of
+                  agency based in Glasgow who passionately embraces the world of
                   digital creativity. We have a genuine passion for crafting
                   exceptional websites and we are open to new clients.
                 </div>
