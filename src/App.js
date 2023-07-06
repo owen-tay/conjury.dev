@@ -5,7 +5,6 @@ import "./index.css";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Services from "./components/services";
-import PageNotFound from "./components/PageNotFound";
 import Navbar from "./components/navbar";
 
 export const DarkModeContext = React.createContext();

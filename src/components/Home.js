@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import DownSvg from "./images/downarrow.svg";
-import imageOne from "./images/home1.png";
 import VideoWhite from "./images/video/whiteloop.mp4";
 import VideoDark from "./images/video/darkloop.mp4";
 import PcPic from "./images/pc.jpg";
-import Logo from "./images/NavImage.svg";
 
 import { scroller } from "react-scroll";
 
