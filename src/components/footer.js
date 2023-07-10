@@ -1,6 +1,9 @@
 import React from "react";
 import conjure from "./images/conjuretext.svg";
 
+
+//not using currently
+
 function Footer() {
   const currentYear = new Date().getFullYear();
   const author = " - Owen Taylor";

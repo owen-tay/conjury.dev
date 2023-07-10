@@ -4,9 +4,11 @@ import DownSvg from "./images/downarrow.svg";
 import VideoWhite from "./images/video/whiteloop.mp4";
 import VideoDark from "./images/video/darkloop.mp4";
 import PcPic from "./images/pc.jpg";
-
 import { scroller } from "react-scroll";
 
+
+
+//react scroll stuff (scroll to id)
 const Home = () => {
   const [theme, setTheme] = useState(localStorage.getItem("theme"));
 
@@ -33,6 +35,7 @@ const Home = () => {
     });
   };
 
+  //changes html class to light mode for tailwind :)
   useEffect(() => {
     const handleStorageChange = () => {
       setTheme(localStorage.getItem("theme"));

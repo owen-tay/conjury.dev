@@ -9,6 +9,8 @@ import Navbar from "./components/navbar";
 
 export const DarkModeContext = React.createContext();
 
+
+//this stops the page router opening up half way down the page, which happens for some reason.
 function ScrollToTop() {
   const location = useLocation();
 
@@ -19,18 +21,16 @@ function ScrollToTop() {
   return null;
 }
 
-function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const updateVideoSource = () => {
-    setIsDarkMode((prevMode) => !prevMode);
-  };
+
+function App() {
+
+  
 
   return (
     <div>
-      <DarkModeContext.Provider
-        value={{ isDarkMode, setIsDarkMode, updateVideoSource }}
-      >
+    
+      
         <Router>
           <Navbar />
           <ScrollToTop />
@@ -43,9 +43,9 @@ function App() {
             <Route path="*" element={<Home />} />
           </Routes>
         </Router>
-      </DarkModeContext.Provider>
     </div>
   );
-}
+
+};
 
 export default App;

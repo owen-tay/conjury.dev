@@ -2,6 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import ContactSvg from "./images/contactpage.svg";
 import Form from "./form";
 
+
+//shows and hides the w3forms, form.
 const Contact = () => {
   const [showForm, setShowForm] = useState(false);
   const formRef = useRef(null);

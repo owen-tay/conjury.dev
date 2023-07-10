@@ -1,15 +1,13 @@
 import React, { useState, useRef, useLayoutEffect, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { animateScroll as scroll, scroller } from "react-scroll";
-import NavImage from "./images/NavImage.svg";
 import SunSvg from "./images/sun.svg";
 import MoonSvg from "./images/moon.svg";
 import SunlightSvg from "./images/sunlight.svg";
 import MoonlightSvg from "./images/moonlight.svg";
 import ConjuryLogo from "./images/ConjuryLogo.svg";
-import Home from "./Home";
-import { useHistory } from "react-router-dom";
 
+
+//dark mode and menu open states
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -49,6 +47,7 @@ function Navbar() {
     window.location.reload();
   };
 
+  //changes darkmode icon n that
   const getMoonIcon = () => {
     if (isDarkMode) {
       return (
@@ -68,6 +67,7 @@ function Navbar() {
       );
     }
   };
+
 
   const getSunIcon = () => {
     if (isDarkMode) {
