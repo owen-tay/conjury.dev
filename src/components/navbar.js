@@ -6,8 +6,6 @@ import SunlightSvg from "./images/sunlight.svg";
 import MoonlightSvg from "./images/moonlight.svg";
 import ConjuryLogo from "./images/ConjuryLogo.svg";
 
-
-//dark mode and menu open states
 function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -21,13 +19,77 @@ function Navbar() {
     }
   }, [isMobileMenuOpen]);
 
+  // Initialize theme before component mounts
   useEffect(() => {
-    if (localStorage.theme === "dark") {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    } else {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
+    // Run this immediately on first mount
+    const initializeTheme = () => {
+      // Check localStorage first
+      if (localStorage.theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        setIsDarkMode(true);
+        return;
+      } else if (localStorage.theme === 'light') {
+        document.documentElement.classList.remove('dark');
+        setIsDarkMode(false);
+        return;
+      }
+      
+      // If no localStorage setting, check system preference
+      try {
+        // This is the most direct way to check system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        if (prefersDark) {
+          document.documentElement.classList.add('dark');
+          setIsDarkMode(true);
+          // IMPORTANT FIX: Save to localStorage even when using system preference
+          localStorage.theme = 'dark';
+        } else {
+          document.documentElement.classList.remove('dark');
+          setIsDarkMode(false);
+          // IMPORTANT FIX: Save to localStorage even when using system preference
+          localStorage.theme = 'light';
+        }
+      } catch (e) {
+        console.error("Error checking color scheme preference:", e);
+        // Default to light mode if detection fails
+        document.documentElement.classList.remove('dark');
+        setIsDarkMode(false);
+        // IMPORTANT FIX: Always set localStorage
+        localStorage.theme = 'light';
+      }
+    };
+    
+    initializeTheme();
+    
+    // Add listener for system changes
+    try {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      const handleSystemThemeChange = (event) => {
+        // IMPORTANT FIX: Store a flag for auto mode in localStorage
+        // We'll add a user preference flag to indicate if this was explicitly set by the user
+        if (!localStorage.userThemePreference) {
+          setIsDarkMode(event.matches);
+          if (event.matches) {
+            document.documentElement.classList.add('dark');
+            localStorage.theme = 'dark';
+          } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.theme = 'light';
+          }
+        }
+      };
+      
+      // Add the listener
+      mediaQuery.addEventListener('change', handleSystemThemeChange);
+      
+      // Clean up
+      return () => {
+        mediaQuery.removeEventListener('change', handleSystemThemeChange);
+      };
+    } catch (e) {
+      console.error("Error setting up theme listener:", e);
     }
   }, []);
 
@@ -36,18 +98,29 @@ function Navbar() {
   };
 
   const toggleDarkMode = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.theme = "light";
+    // Toggle the state
+    const newDarkMode = !isDarkMode;
+    
+    // Update the state first for immediate UI update
+    setIsDarkMode(newDarkMode);
+    
+    // Apply the theme to the document
+    if (newDarkMode) {
+      document.documentElement.classList.add('dark');
+      localStorage.theme = 'dark';
     } else {
-      document.documentElement.classList.add("dark");
-      localStorage.theme = "dark";
+      document.documentElement.classList.remove('dark');
+      localStorage.theme = 'light';
     }
-    setIsDarkMode(!isDarkMode);
-    window.location.reload();
+    
+    // IMPORTANT FIX: Set user preference flag
+    localStorage.userThemePreference = 'true';
+    
+    // OPTIONAL FIX: Remove the page reload which might be causing issues
+    // Instead, just update the class on documentElement which will affect all components
+    // window.location.reload(); - Remove this line
   };
 
-  //changes darkmode icon n that
   const getMoonIcon = () => {
     if (isDarkMode) {
       return (
@@ -67,7 +140,6 @@ function Navbar() {
       );
     }
   };
-
 
   const getSunIcon = () => {
     if (isDarkMode) {
