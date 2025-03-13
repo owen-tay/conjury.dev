@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Contact from "./components/Contact";
 import Services from "./components/services";
 import Navbar from "./components/navbar";
+import Footer from "./components/footer";
 
 export const DarkModeContext = React.createContext();
 
@@ -42,6 +43,8 @@ function App() {
 
             <Route path="*" element={<Home />} />
           </Routes>
+          <Footer />
+
         </Router>
     </div>
   );
