@@ -116,16 +116,7 @@ const Home = () => {
                 </div>
               </div>
               
-              {/* Down arrow button */}
-              <a className="downbutton w-5 block mt-8" onClick={scrollTohome2}>
-                <div className="hover:scale-110 ease-in-out duration-300">
-                  <img
-                    className="drop-shadow-xl w-12 md:w-16 2xl:w-20 slide-top-fast mx-auto ease-in-out duration-300 animate-bounce"
-                    src={DownSvg}
-                    alt="down button"
-                  />
-                </div>
-              </a>
+
             </div>
           </div>
         </div>
