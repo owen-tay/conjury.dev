@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="fadein container mx-auto pt-8">
+    <div className="fadein container mx-auto mt-12 contactScreen">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-1  mx-2 lg:mx-20">
         <div className="lg:order-1 flex flex-col justify-center text-center lg:text-left">
           <h1 className="text-pink-conjury text-5xl pt-3 md:pt-12  lg:pt-1">

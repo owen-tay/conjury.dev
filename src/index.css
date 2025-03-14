@@ -260,3 +260,8 @@ body {
   transform: translateZ(0);
   will-change: transform;
 }
+
+.contactScreen {
+height:  80vh;
+
+}

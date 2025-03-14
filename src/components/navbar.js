@@ -264,7 +264,7 @@ function Navbar() {
         >
           <div
             id="navDiv"
-            className="bg-white dark:bg-slate-800 px-4 md:px-0 text-4xl"
+            className="bg-white dark:bg-slate-800 px-4 md:px-0 text-5xl"
             ref={menuRef}
             style={{
               transition: "height 0.3s, opacity 2s",
@@ -273,7 +273,7 @@ function Navbar() {
               display: isMobileMenuOpen ? "block" : "block",
             }}
           >
-            <div className="flex flex-col items-end">
+            <div className="flex flex-col items-end gap-5 mt-5">
               <Link
                 to="/Contact"
                 className="mt-1 block transition-colors duration-200 text-black dark:text-white hover:text-pink-conjury dark:hover:text-pink-conjury"
